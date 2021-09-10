@@ -6,14 +6,26 @@
 
 
 			<div class="form-group form-group-sm">
-				<?php echo form_label($this->lang->line('config_gold_price_21'), 'lines_per_page', array('class' => 'control-label col-xs-2 required')); ?>
+				<?php echo form_label($this->lang->line('config_gold_price_21'), 'gold_price_21', array('class' => 'control-label col-xs-2 required')); ?>
 				<div class='col-xs-2'>
 					<?php echo form_input(array(
 						'name' => 'gold_price_21',
 						'id' => 'gold_price_21',
 						'class' => 'form-control input-sm required',
 						'type' => 'number',
-						'value' => $this->config->item('lines_per_page'))); ?>
+						'value' => '')); ?>
+				</div>
+			</div>
+
+			<div class="form-group form-group-sm">
+				<?php echo form_label($this->lang->line('config_dolar_price'), 'dolar_price', array('class' => 'control-label col-xs-2 required')); ?>
+				<div class='col-xs-2'>
+					<?php echo form_input(array(
+						'name' => 'dolar_price',
+						'id' => 'dolar_price',
+						'class' => 'form-control input-sm required',
+						'type' => 'number',
+						'value' => '')); ?>
 				</div>
 			</div>
 
@@ -40,6 +52,11 @@ $(document).ready(function()
 			{
 				required: true,
 				// remote: "<?php echo site_url($controller_name . '/check_numeric')?>"
+			},
+			dolar_price:
+			{
+				required: true,
+				// remote: "<?php echo site_url($controller_name . '/check_numeric')?>"
 			}
 		},
 
@@ -48,6 +65,10 @@ $(document).ready(function()
 			gold_price_21:
 			{
 				required: "<?php echo $this->lang->line('config_gold_price_21_required'); ?>"
+			},
+			dolar_price:
+			{
+				required: "<?php echo $this->lang->line('config_dolar_price_required'); ?>"
 			}
 		},
 
