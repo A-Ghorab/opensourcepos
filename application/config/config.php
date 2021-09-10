@@ -359,7 +359,7 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = getenv('ENCRYPTION_KEY') ? getenv('ENCRYPTION_KEY') : '';
+$config['encryption_key'] = getenv('ENCRYPTION_KEY') ? getenv('ENCRYPTION_KEY') : 'b97c6432434fc85dca24b9c12294d834b8eeab4156a6475101564ae5e58d8afe';
 
 /*
 |--------------------------------------------------------------------------

@@ -38,6 +38,9 @@
 	<li role="presentation">
 		<a data-toggle="tab" href="#system_tab" title="<?php echo $this->lang->line('config_system_conf'); ?>"><?php echo $this->lang->line('config_system_conf'); ?></a>
 	</li>
+	<li role="presentation">
+		<a data-toggle="tab" href="#exchange_rate" title="<?php echo $this->lang->line('config_exchange_rate'); ?>"><?php echo $this->lang->line('config_exchange_rate'); ?></a>
+	</li>
 </ul>
 
 <div class="tab-content">
@@ -73,6 +76,9 @@
 	</div>
 	<div class="tab-pane" id="system_tab">
 		<?php $this->load->view("configs/system_config"); ?>
+	</div>
+	<div class="tab-pane" id="exchange_rate">
+		<?php $this->load->view("configs/exchange_rate"); ?>
 	</div>
 </div>
 

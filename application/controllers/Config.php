@@ -335,6 +335,21 @@ class Config extends Secure_Controller
 		));
 	}
 
+	public function save_exchange_rate()
+	{
+		$caret21 = intval($this->input->post('gold_price_21'));
+		$caret18 = (18/21) * $caret21;
+		$caret24 = (24/21) * $caret21;
+
+		echo json_encode(array(
+			'success' => true,
+			'message' => "Price updated successfully",
+			'caret24' => $caret24,
+			'caret21' => $caret21,
+			'caret18' => $caret18
+		));
+	}
+
 	public function ajax_check_number_locale()
 	{
 		$number_locale = $this->input->post('number_locale');
@@ -957,4 +972,3 @@ class Config extends Secure_Controller
 		}
 	}
 }
-?>

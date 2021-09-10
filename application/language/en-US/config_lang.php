@@ -298,3 +298,7 @@ $lang["config_user_timezone"] = "Local Timezone:";
 $lang["config_website"] = "Website";
 $lang["config_work_order_enable"] = "Work Order Support";
 $lang["config_work_order_format"] = "Work Order Format";
+
+$lang["config_exchange_rate"] = "Exchange Rate";
+$lang["config_gold_price_21"] = "Gold 21 Caret Price";
+$lang["config_gold_price_21_required"] = "Price for Gold 21 is required";

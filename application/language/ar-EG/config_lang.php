@@ -298,3 +298,8 @@ $lang["config_user_timezone"] = "";
 $lang["config_website"] = "موقع الشركة";
 $lang["config_work_order_enable"] = "تفعيل طلبات العمل";
 $lang["config_work_order_format"] = "شكل طلبات العمل";
+
+
+$lang["config_exchange_rate"] = "اسعار العملة";
+$lang["config_gold_price_21"] = "سعر ذهب عيار 21";
+$lang["config_gold_price_21_required"] = "سعر عيار 21 مطلوب";
