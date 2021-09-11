@@ -341,6 +341,49 @@ class Config extends Secure_Controller
 		$caret18 = (18/21) * $caret21;
 		$caret24 = (24/21) * $caret21;
 
+		$items = $this->Item->get_all()->result();
+
+		$definition_names = $this->Attribute->get_definitions_by_flags(Attribute::SHOW_IN_ITEMS);
+		
+		$data_rows = array();
+
+		foreach($items as $item)
+		{
+			//expand_attribute_values($definition_names, (array) $item)
+			$item_info = $this->Attribute->get_attributes_by_item($item->item_id);
+			
+			$goldCaretDefinition = 9;
+
+			$isGold = array_key_exists($goldCaretDefinition, $item_info);
+			if($isGold){
+				echo json_encode($item_info); die;
+				$goldCaret = intval($this->Attribute->get_attribute_value($item->item_id, $goldCaretDefinition)->attribute_decimal);
+				$goldWight = floatval($this->Attribute->get_attribute_value($item->item_id, $goldCaretDefinition)->attribute_decimal);
+				
+			}
+			$data_rows[]=  (array)$item + ['definition' => $item_info];
+		}
+		echo json_encode($data_rows); die;
+		// var_dump($data_rows);
+		
+		die;
+
+		$filters = array('start_date' => '2010-01-01',
+		'end_date' => '2050-01-01',
+		'stock_location_id' => -1,
+		'empty_upc' => FALSE,
+		'low_inventory' => FALSE,
+		'is_serialized' => FALSE,
+		'no_description' => FALSE,
+		'search_custom' => FALSE,
+		'is_deleted' => FALSE,
+		'temporary' => FALSE,
+		'definition_ids' => []
+		);
+
+
+		$items = $this->Item->search("", $filters);
+		
 		echo json_encode(array(
 			'success' => true,
 			'message' => "Price updated successfully",
